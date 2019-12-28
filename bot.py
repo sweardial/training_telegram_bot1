@@ -41,7 +41,7 @@ def notification_time(update: telegram.Update, context: telegram.ext.CallbackCon
         time = string_time.time()
 
         context.bot.send_message(chat_id=update.message.chat_id,
-                                 text='Sure! I\'ll send you notification at {} every day!'.format(context.args[0]))
+                                 text='Sure! I\'m going to send you notification at {} every day!'.format(context.args[0]))
         context.job_queue.run_daily(notification, time=time, context=update.message.chat_id)
 
     except ValueError:
